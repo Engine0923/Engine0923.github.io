@@ -1,0 +1,17 @@
+.wdxl-lubrifont-sc-regular {
+    font-family: "WDXL Lubrifont SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+/* <!--啟動改字體的功能--> */
+h1 {
+    font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.content {
+    /* padding-left: 4rem; */
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 120px;
+}

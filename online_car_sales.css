@@ -1,0 +1,37 @@
+/* 減少 p 標籤的 margin */
+.car-info p {
+    margin: 5px 0;
+    padding: 2px 0;
+}
+
+/* 減少 hr 的 margin */
+.car-info hr {
+    margin: 3px 0 !important;
+}
+
+hr {
+    height: 3px;
+    border: none;
+}
+
+
+.Button {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    /* background-color: black; */
+
+    text-align: center;
+}
+
+.btn-1 {
+    background-color: black;
+    color: aliceblue;
+}
+
+.row-padding{
+    padding-bottom: 100px;
+}
+
+.title {
+    text-align: center;
+}
