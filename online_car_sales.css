@@ -18,14 +18,69 @@ hr {
 .Button {
     padding-top: 120px;
     padding-bottom: 100px;
-    /* background-color: black; */
-
-    text-align: center;
+    /* 使用 flex 讓按鈕固定在同一行 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* 不換行（桌面預設） */
+    gap: 0.75rem; /* 按鈕間距 */
+    justify-content: center; /* 水平置中 */
+    align-items: center;
+    overflow-x: auto; /* 小螢幕可以水平滾動 */
+    white-space: nowrap;
+    width: 100%; /* 確保容器撐滿可點擊區域 */
+    box-sizing: border-box; /* 包含 padding 在內 */
+    padding-left: 1rem; /* 左右內距，避免按鈕緊貼邊緣 */
+    padding-right: 1rem;
+    touch-action: pan-x; /* 明確允許橫向滑動手勢 */
+    z-index: 1; /* 確保不被其他元素覆蓋 */
 }
 
 .btn-1 {
     background-color: black;
     color: aliceblue;
+}
+
+.Button .btn {
+    flex: 1 1 120px; /* grow, shrink, base-size */
+    min-width: 90px; /* 最小寬度，避免變得太小無法點擊 */
+    white-space: nowrap;
+    display: inline-flex; /* 讓文字垂直置中且能正確擴縮 */
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem; /* 增加可點擊區域 */
+}
+
+@media (min-width: 769px) {
+    .Button .btn {
+        flex: 0 0 auto; /* 在桌面/平板上恢復原本大小，不強制縮放 */
+    }
+}
+
+/* 如果畫面變窄到一行放不下所有按鈕，改成兩行（每行 3 個） */
+@media (max-width: 900px) {
+    .Button {
+        flex-wrap: wrap; /* 允許換行 */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* 3 欄布局：每個按鈕約佔 33.333% 寬度，考慮 gap 與 padding */
+    .Button .btn {
+        flex: 0 0 calc(33.333% - 0.5rem);
+        min-width: 0; /* 允許縮小到百分比寬度 */
+    }
+}
+
+/* 隱藏桌面以外的水平滾動條樣式（視需要可移除） */
+.Button::-webkit-scrollbar {
+    height: 8px;
+}
+.Button::-webkit-scrollbar-track {
+    background: transparent;
+}
+.Button::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 4px;
 }
 
 .row-padding{

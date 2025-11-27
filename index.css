@@ -78,3 +78,38 @@
 .company-info {
   padding-left: 36px;
 }
+.carousel-caption h1 {
+  /* 保持響應式字號，但移除所有裝飾，呈現為純文字 */
+  font-size: clamp(1.25rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+  display: block;
+  color: #fff;
+  text-shadow: none; /* 明確移除 text-shadow */
+  background: transparent; /* 移除半透明背景 */
+  padding: 0; /* 移除內距 */
+  border-radius: 0; /* 移除圓角 */
+}
+
+/* 讓 carousel caption 在所有尺寸保持水平置中並靠近底部顯示 */
+.carousel-caption {
+  position: absolute; /* 覆蓋或明確化位置行為 */
+  left: 0;
+  right: 0;
+  bottom: 8%; /* 默認靠下的位置（可調） */
+  text-align: center; /* 使內部文字在中間 */
+  padding: 0 1rem; /* 防止文字緊貼邊緣 */
+  transform: none; /* 避免 translate 導致跑位 */
+}
+
+/* 在非常小的螢幕上微調位置與字距 */
+@media (max-width: 480px) {
+  .carousel-caption {
+    bottom: 1rem; /* 向上移動以避免與控制器重疊 */
+    padding: 0 0.75rem; /* 稍微減少左右內距 */
+  }
+  .carousel-caption h1 {
+    font-size: 1.1rem;
+    padding: 0; /* 保持無額外效果 */
+  }
+}
