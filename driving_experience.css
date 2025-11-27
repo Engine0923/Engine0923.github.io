@@ -11,7 +11,32 @@ h1 {
 
 .content {
     /* padding-left: 4rem; */
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 120px;
+        padding-left: 150px;
+        padding-right: 150px;
+        padding-top: 120px;
+}
+
+/* Responsive: 減少左右空白，讓圖片在小螢幕顯示更大 */
+@media (max-width: 992px) {
+    .content {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 80px;
+    }
+    /* 確保 carousel 圖片不受限制，佔滿可用寬度 */
+    .content img,
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 60px;
+    }
 }
