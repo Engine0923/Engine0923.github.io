@@ -78,6 +78,40 @@
 .company-info {
   padding-left: 36px;
 }
+
+/* 共用 .content 樣式：兩側留白並在小螢幕減少空白 */
+.content {
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+
+/* 讓 .content 內的圖片大小一致且能響應 */
+.content img {
+  width: 100% !important; /* 覆寫 inline width/height，讓圖片充滿容器 */
+  height: auto !important;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 60px;
+  }
+}
 .carousel-caption h1 {
   /* 保持響應式字號，但移除所有裝飾，呈現為純文字 */
   font-size: clamp(1.25rem, 4.5vw, 3rem);
